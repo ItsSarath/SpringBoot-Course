@@ -39,4 +39,15 @@ public class TopicService {
 		allTopics.add(topic);
 	}
 
+	public List<TopicClass> deleteTopic(String id) {
+		for(TopicClass topic: allTopics) {
+			if(topic.getId().equals(id)) {
+				allTopics.remove(topic);
+				break;
+			}
+		}
+		return allTopics;
+		
+	}
+
 }
