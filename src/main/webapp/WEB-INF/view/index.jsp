@@ -32,14 +32,13 @@ $(document).ready(function(){
     <div>
         <div>
         <form id="serviceForm">
-            <h1>Spring Boot JSP Example</h1>
             <h2>Hello ${message}</h2>
              
             Click on this <strong><a href="next">link</a></strong> to visit another page.
+            <p> Ajax example</p>
             <label for="serviceName">Service Name:</label><select id="service">
-            <option value="1">Service1</option>
-            <option value="2">Service2</option>
-            
+            <option value="Service1">Service1</option>
+            <option value="Service2">Service2</option>
             </select>
             <button type="submit" value="Submit" id="submit">Submit</button>
             <label id="selectLable"></label>
