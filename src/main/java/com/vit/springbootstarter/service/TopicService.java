@@ -1,5 +1,6 @@
 package com.vit.springbootstarter.service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,10 +10,12 @@ import com.vit.springbootstarter.topic.TopicClass;
 
 @Service
 public class TopicService {
-	private List<TopicClass> allTopics = Arrays.asList(
+	//Arrays.asList creates an immutable ArrayList - we cant change(Add/delete)
+	// new ArrayList<>(Arrays.List); creates a mutable ArrayList
+	private List<TopicClass> allTopics = new ArrayList<>(Arrays.asList(
 			new TopicClass("133", "C Lang", "Its a computer language"),
 			new TopicClass("134", "C++", "OOPS"),
-			new TopicClass("135", "Java", "Also OOPS"));
+			new TopicClass("135", "Java", "Also OOPS")));
 	
 	public List<TopicClass> getAllTopics() {
 		return allTopics;
@@ -30,6 +33,10 @@ public class TopicService {
 			}
 		}
 		return resultTopicClass;
+	}
+
+	public void addTopic(TopicClass topic) {
+		allTopics.add(topic);
 	}
 
 }

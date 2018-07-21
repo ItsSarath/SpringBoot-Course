@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vit.springbootstarter.service.TopicService;
@@ -27,4 +29,11 @@ public class TopicController {
 	public TopicClass getTopicById(@PathVariable("id") String id) {
 		return topicService.getTopic(id);
 	}
+	
+	//POST request - tested from Postman chrome app
+	@RequestMapping(value = "/topics", method = RequestMethod.POST)
+	public void addTopic(@RequestBody TopicClass topic) {
+		topicService.addTopic(topic);
+	}
+	
 }
