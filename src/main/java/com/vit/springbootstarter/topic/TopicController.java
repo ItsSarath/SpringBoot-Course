@@ -31,6 +31,7 @@ public class TopicController {
 	}
 	
 	//POST request - tested from Postman chrome app
+	//@RequestBody - when we send topic object while run the application from Postman chrome app
 	@RequestMapping(value = "/topics", method = RequestMethod.POST)
 	public void addTopic(@RequestBody TopicClass topic) {
 		topicService.addTopic(topic);
@@ -39,6 +40,16 @@ public class TopicController {
 	@RequestMapping("/topics/delete/{id}")
 	public List<TopicClass> deleteTopic(@PathVariable("id") String id) {
 		return topicService.deleteTopic(id);
+	}
+	
+	@RequestMapping(value = "/topics/{id}", method = RequestMethod.DELETE)
+	public List<TopicClass> deleteTopic1(@PathVariable("id") String id) {
+		return topicService.deleteTopic(id);
+	}
+	
+	@RequestMapping(value="/topics/{id}", method=RequestMethod.PUT)
+	public void updateTopicById(@PathVariable("id") String id, @RequestBody TopicClass topic) {
+		topicService.updateTopic(id, topic);
 	}
 	
 }

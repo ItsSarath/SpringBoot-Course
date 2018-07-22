@@ -40,6 +40,9 @@ public class TopicService {
 	}
 
 	public List<TopicClass> deleteTopic(String id) {
+		//Java 8
+		//allTopics.removeIf(t->t.getId().equals(id));
+		//Java 7
 		for(TopicClass topic: allTopics) {
 			if(topic.getId().equals(id)) {
 				allTopics.remove(topic);
@@ -47,6 +50,17 @@ public class TopicService {
 			}
 		}
 		return allTopics;
+		
+	}
+
+	public void updateTopic(String id, TopicClass topic) {
+		for(int i=0;i<allTopics.size();i++) {
+			if(allTopics.get(i).getId().equals(topic.getId())){
+				allTopics.set(i, topic);
+				return;
+			}
+			
+		}
 		
 	}
 
