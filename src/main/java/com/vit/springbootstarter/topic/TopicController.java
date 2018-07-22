@@ -52,4 +52,14 @@ public class TopicController {
 		topicService.updateTopic(id, topic);
 	}
 	
+	/*Now we created Spring boot application by creating a simple maven application, added dependencies, 
+	 *Other ways to create a spring boot application:
+	 *	-Strarting a Spring boot App
+	 *		Spring initializr(start.spring.io) online application
+	 *		Spring Boot CLI(command line interface)
+	 *		STS IDE -> File->new->Spring starter project. This is similar
+	 *					to start.spring.io application
+	 *	-Configuration
+	 * 
+	 */	
 }
